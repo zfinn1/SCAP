@@ -14,7 +14,7 @@ pip install -r src/requirements.txt
 Hardware recommendation:
 We used an NVIDIA Titan RTX (24 GB) for training. An RTX 3090 or A6000 is also suitable.
 Training times are approximately 2–2.5 days per dataset.
-```bash
+```
 📁 Data and Preparation
 Follow the instructions below to download each dataset. Your folder structure should look like this:
 
