@@ -57,6 +57,13 @@ python data_processing/compute_overlap_3dmatch.py
 ModelNet
 Download the PointNet‑processed ModelNet40 dataset from this official link and unzip into ../data/modelnet40_ply_hdf5_2048/.
 
+
+## 💻 Framework
+<img width="1021" height="718" alt="image" src="https://github.com/user-attachments/assets/f21e399b-5c4d-4035-833a-2554f6602e14" />
+
+![Uploading image.png…]()
+
+
 🧠 Pretrained Models
 We provide pretrained models for 3DMatch and ModelNet.
 Download them from [待补充链接] (e.g., Google Drive, Zenodo) and unzip into the trained_models/ folder.
