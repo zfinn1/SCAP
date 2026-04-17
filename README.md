@@ -1,35 +1,19 @@
+## 🚀 Dataset Environment
 
-
-
-
-
-
-
-
-
-🚀 Dataset Environment
 Our model is trained with the following environment (recommended for full reproducibility):
 
-Python 3.8.8
+- **Python** 3.8.8  
+- **PyTorch** 1.9.1 with torchvision 0.10.1 (CUDA 11.1)  
+- **PyTorch3D** 0.6.0  
+- **MinkowskiEngine** 0.5.4  
 
-PyTorch 1.9.1 with torchvision 0.10.1 (CUDA 11.1)
+Other required packages can be installed via:
 
-PyTorch3D 0.6.0
-
-MinkowskiEngine 0.5.4
-
-Other required packages can be installed using:
-
-bash
+```bash
 pip install -r src/requirements.txt
-Hardware recommendation: We used an NVIDIA Titan RTX (24 GB) for training. An RTX 3090 or A6000 is also suitable. Training times are approximately 2–2.5 days per dataset.
-
-
-
-
-
-
-
+Hardware recommendation:
+We used an NVIDIA Titan RTX (24 GB) for training. An RTX 3090 or A6000 is also suitable.
+Training times are approximately 2–2.5 days per dataset.
 
 📁 Data and Preparation
 Follow the instructions below to download each dataset. Your folder structure should look like this:
@@ -60,7 +44,9 @@ text
 ├── src/
 └── README.md
 3DMatch / 3DLoMatch
-Download the processed 3DMatch dataset from the Predator project site (or use the preprocessed version linked in the original RegTR repository). Place the contents into ../data/indoor/.
+Download the processed 3DMatch dataset from the Predator project site (or use the preprocessed version linked in the original RegTR repository).
+
+Place the contents into ../data/indoor/.
 
 (Optional but recommended) Pre‑compute overlapping points for the overlap loss to speed up training:
 
@@ -71,7 +57,8 @@ ModelNet
 Download the PointNet‑processed ModelNet40 dataset from this official link and unzip into ../data/modelnet40_ply_hdf5_2048/.
 
 🧠 Pretrained Models
-We provide pretrained models for 3DMatch and ModelNet. Download them from [待补充链接] (e.g., Google Drive, Zenodo) and unzip into the trained_models/ folder.
+We provide pretrained models for 3DMatch and ModelNet.
+Download them from [待补充链接] (e.g., Google Drive, Zenodo) and unzip into the trained_models/ folder.
 
 Expected structure after unzipping:
 
@@ -83,11 +70,10 @@ trained_models/
 └── modelnet/
     └── ckpt/
         └── model-best.pth
-
-
-
 📊 Inference / Evaluation
-Run the following commands from the src/ directory. Note that due to non‑determinism in GPU‑based KPConv neighborhood computation, results may vary slightly between runs
+Run the following commands from the src/ directory.
+
+Note: Due to non‑determinism in GPU‑based KPConv neighborhood computation, results may vary slightly between runs.
 
 3DMatch / 3DLoMatch
 bash
@@ -100,22 +86,17 @@ ModelNet / ModelLoNet
 bash
 # ModelNet
 python test.py --dev --resume ../trained_models/modelnet/ckpt/model-best.pth --benchmark ModelNet
-If you have defined a ModelLoNet split, use the same command
+If you have defined a ModelLoNet split, use the same command.
 
 🏋️ Training
 To train the network from scratch, run the following commands from the src/ directory.
 
-3DMatch 
+3DMatch
 bash
 python train.py --config conf/3dmatch.yaml
-
-ModelNet 
+ModelNet
 bash
 python train.py --config conf/modelnet.yaml
-
-
 🙏 Acknowledgements
 We thank the authors of the following open‑source projects for making their code available:
-
-RegTR,PTT,Predator, D3Feat, KPConv, DETR – for their publicly released source code that greatly facilitated this work.
-
+RegTR, PTT, Predator, D3Feat, KPConv, DETR – their publicly released source code greatly facilitated this work.
