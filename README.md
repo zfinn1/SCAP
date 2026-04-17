@@ -62,7 +62,7 @@ We provide pretrained models for 3DMatch and ModelNet.
 Download them from [待补充链接] (e.g., Google Drive, Zenodo) and unzip into the trained_models/ folder.
 
 Expected structure after unzipping:
-
+```bash
 text
 trained_models/
 ├── 3dmatch/
@@ -71,6 +71,7 @@ trained_models/
 └── modelnet/
     └── ckpt/
         └── model-best.pth
+```
 📊 Inference / Evaluation
 Run the following commands from the src/ directory.
 
