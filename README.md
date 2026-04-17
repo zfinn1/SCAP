@@ -17,7 +17,7 @@ Training times are approximately 2–2.5 days per dataset.
 ```
 📁 Data and Preparation
 Follow the instructions below to download each dataset. Your folder structure should look like this:
-
+```bash
 text
 .
 ├── data/
@@ -43,6 +43,7 @@ text
 │       └── ...
 ├── src/
 └── README.md
+```
 3DMatch / 3DLoMatch
 Download the processed 3DMatch dataset from the Predator project site (or use the preprocessed version linked in the original RegTR repository).
 
