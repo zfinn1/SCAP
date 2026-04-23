@@ -103,6 +103,7 @@ If you have defined a ModelLoNet split, use the same command.
 
 ## 🏋️ Training
 To train the network from scratch, run the following commands from the src/ directory.
+
 '''
 3DMatch
 bash
