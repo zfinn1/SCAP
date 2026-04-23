@@ -67,15 +67,13 @@ Download the PointNet‑processed ModelNet40 dataset from this official link and
 ## 💻 Framework
 <img width="1021" height="718" alt="image" src="https://github.com/user-attachments/assets/f21e399b-5c4d-4035-833a-2554f6602e14" />
 
-![Uploading image.png…]()
 
-
-🧠 Pretrained Models
+## 🧠 Pretrained Models
 We provide pretrained models for 3DMatch and ModelNet.
 Download them from ModelNet and 3Dmatch (e.g., Google Drive, Zenodo) and unzip into the trained_models/ folder.
 
 Expected structure after unzipping:
-```bash
+```
 text
 trained_models/
 ├── 3dmatch/
@@ -85,25 +83,25 @@ trained_models/
     └── ckpt/
         └── model-best.pth
 ```
-📊 Inference / Evaluation
+## 📊 Inference / Evaluation
 Run the following commands from the src/ directory.
 
 Note: Due to non‑determinism in GPU‑based KPConv neighborhood computation, results may vary slightly between runs.
 
 3DMatch / 3DLoMatch
-bash
+
 # 3DMatch benchmark (registration success <20cm)
 python test.py --dev --resume ../trained_models/3dmatch/ckpt/model-best.pth --benchmark 3DMatch
 
 # 3DLoMatch benchmark (more challenging)
 python test.py --dev --resume ../trained_models/3dmatch/ckpt/model-best.pth --benchmark 3DLoMatch
 ModelNet / ModelLoNet
-bash
+
 # ModelNet
 python test.py --dev --resume ../trained_models/modelnet/ckpt/model-best.pth --benchmark ModelNet
 If you have defined a ModelLoNet split, use the same command.
 
-🏋️ Training
+## 🏋️ Training
 To train the network from scratch, run the following commands from the src/ directory.
 '''
 3DMatch
@@ -114,6 +112,23 @@ bash
 python train.py --config conf/modelnet.yaml
 '''
 
-##🙏 Acknowledgements
+
+## 🚀Citation
+```bibtex
+@ARTICLE{11395294,
+  author={Zhou, Jingyu and Ma, Yunfeng and Jiang, Shuai and Wang, Yaonan and Liu, Min},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+  title={SCAP: Semantic Prototype Alignment for Robust Point Cloud Registration}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1-1},
+  keywords={Point cloud compression;Semantics;Prototypes;Noise;Transformers;Robustness;Feature extraction;Accuracy;Robots;Estimation;Point cloud registration;rigid transformation estimation;semantic prototype},
+  doi={10.1109/TCSVT.2026.3664224}}
+
+```
+
+
+## 🙏 Acknowledgements
 We thank the authors of the following open‑source projects for making their code available:
 RegTR, PTT, Predator, D3Feat, KPConv, DETR – their publicly released source code greatly facilitated this work.
