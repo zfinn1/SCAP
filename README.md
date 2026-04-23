@@ -1,3 +1,8 @@
+# SCAP: Semantic Prototype Alignment for Robust Point Cloud Registration
+
+> **📢 News (2026-02-12):** Our paper has been accepted by **IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)**!
+
+
 ## 🚀 Dataset Environment
 
 Our model is trained with the following environment (recommended for full reproducibility):
@@ -51,12 +56,13 @@ Place the contents into ../data/indoor/.
 
 (Optional but recommended) Pre‑compute overlapping points for the overlap loss to speed up training:
 
+'''
 bash
 cd src
 python data_processing/compute_overlap_3dmatch.py
 ModelNet
 Download the PointNet‑processed ModelNet40 dataset from this official link and unzip into ../data/modelnet40_ply_hdf5_2048/.
-
+'''
 
 ## 💻 Framework
 <img width="1021" height="718" alt="image" src="https://github.com/user-attachments/assets/f21e399b-5c4d-4035-833a-2554f6602e14" />
@@ -66,7 +72,7 @@ Download the PointNet‑processed ModelNet40 dataset from this official link and
 
 🧠 Pretrained Models
 We provide pretrained models for 3DMatch and ModelNet.
-Download them from [待补充链接] (e.g., Google Drive, Zenodo) and unzip into the trained_models/ folder.
+Download them from ModelNet and 3Dmatch (e.g., Google Drive, Zenodo) and unzip into the trained_models/ folder.
 
 Expected structure after unzipping:
 ```bash
@@ -99,13 +105,15 @@ If you have defined a ModelLoNet split, use the same command.
 
 🏋️ Training
 To train the network from scratch, run the following commands from the src/ directory.
-
+'''
 3DMatch
 bash
 python train.py --config conf/3dmatch.yaml
 ModelNet
 bash
 python train.py --config conf/modelnet.yaml
-🙏 Acknowledgements
+'''
+
+##🙏 Acknowledgements
 We thank the authors of the following open‑source projects for making their code available:
 RegTR, PTT, Predator, D3Feat, KPConv, DETR – their publicly released source code greatly facilitated this work.
