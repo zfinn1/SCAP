@@ -104,14 +104,14 @@ If you have defined a ModelLoNet split, use the same command.
 ## 🏋️ Training
 To train the network from scratch, run the following commands from the src/ directory.
 
-'''
+```
 3DMatch
 bash
 python train.py --config conf/3dmatch.yaml
 ModelNet
 bash
 python train.py --config conf/modelnet.yaml
-'''
+```
 
 
 ## 🚀Citation
